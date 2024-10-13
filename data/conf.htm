@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Wifi-Thermometer</title>
+	<script type="text/javascript" src="function.js"></script>
+	<script type="text/javascript">
+		function getTheStuff(){
+		  getData('ssid');
+		  getData('pass');
+          getData('ms');
+          getData('mu');
+          getData('mp');
+		  getData('s1');
+		  getData('s2');
+		  getData('col');
+          getData('col2');
+          getData('store');
+		}
+	</script>
+	<link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="getTheStuff()">
+  <div class="head">
+	<div class="dropdown">
+	  <button class="btn dropbtn">Menu</button>
+		<div class="dropdown-content">
+		  <a href="/">Home</a>
+		  <a href="/conf.htm">Konfiguration</a>
+		  <a href="/down.htm">Download</a>
+		  <a href="/upload">Upload</a>
+		  <a href="/update">Firmware</a>
+          <a href="/reset">RESET</a>  
+		</div>
+	  </div>
+	</div>
+  </div>
+  <div>
+	<h2>Konfiguration</h2>
+    <form method="post">
+	  <div id="wifi">
+		<h3>WLAN Netzwerk</h3>
+		<label>WLAN Name (4 - 32):</label>
+		<input type="text" id="ssid" name="ssid" required minlength="4" maxlength="32" size="32"><br>
+		<label>Passwort (8 - 32):</label>
+		<input type="password" id="pass" name="pass" required minlength="8" maxlength="32" size="32"><br>
+        <h3>MQTT Setup</h3>
+		<label>MQTT-Server:</label>
+		<input type="text" id="ms" name="ms" size="32"><br>
+		<label>MQTT-User:</label>
+		<input type="text" id="mu" name="mu" size="32"><br>
+		<label>MQTT-Passwort:</label>
+		<input type="password" id="mp" name="mp" maxlength="32" size="32"><br>
+        <h3>Sensoren</h3>
+		<label>Name Sensor 1:</label>
+		<input type="text" id="s1" name="s1" size="32"><br>
+		<label>Name Sensor 2:</label>
+		<input type="text" id="s2" name="s2" size="32"><br>
+	  </div>
+	  <div id="color">
+		<h3>Farben:</h3>
+		<label>Farbe Sensor 1:</label>
+		<select name="col" id="col">
+		  <option value="0">Grün</option>
+		  <option value="1">Rot</option>
+		  <option value="2">Blau</option>
+		</select>		
+        <br>
+		<label>Farbe Sensor 2:</label>
+		<select name="col2" id="col2">
+		  <option value="0">Grün</option>
+		  <option value="1">Rot</option>
+		  <option value="2">Blau</option>
+		</select>		
+	  </div>
+	  <div id="interval">
+		<h3>Interval:</h3>
+		<label>Aufzeichnungsinterval::</label>
+		<select name="store" id="store">
+		  <option value="1">5 Sekunden</option>
+		  <option value="2">10 Sekunden</option>
+		  <option value="3">15 Sekunden</option>
+		  <option value="4">20 Sekunden</option>
+		  <option value="5">25 Sekunden</option>
+		  <option value="6">30 Sekunden</option>
+		  <option value="7">35 Sekunden</option>
+		  <option value="8">40 Sekunden</option>
+		  <option value="9">45 Sekunden</option>
+		  <option value="10">50 Sekunden</option>
+		  <option value="11">55 Sekunden</option>
+		  <option value="12">60 Sekunden</option>
+		</select>				
+	  </div>
+	  <input type="submit" value="Speichern" class="btn">
+	</form>
+  </div>
+  </body>
+</html>

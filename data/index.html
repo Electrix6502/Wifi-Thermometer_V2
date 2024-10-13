@@ -1,0 +1,41 @@
+<!-- Complete project details: https://randomnerdtutorials.com/esp32-plot-readings-charts-multiple/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WiFi Thermometer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  </head>
+  <body>
+  <div class="head">
+	<div class="dropdown">
+	  <button class="btn dropbtn">Menu</button>
+		<div class="dropdown-content">
+		  <a href="/">Home</a>
+		  <a href="/conf.htm">Konfiguration</a>
+		  <a href="/down.htm">Download</a>
+		  <a href="/upload">Upload</a>
+		  <a href="/update">Firmware</a>
+          <a href="/reset">RESET</a>          
+		</div>
+	  </div>
+	</div>
+  </div>
+    <div class="content">
+      <div class="card-grid">
+        <div class="card">
+          <div id="chart-temperature" class="chart-container"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
